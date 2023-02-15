@@ -44,7 +44,7 @@ public class JoyStick : MonoBehaviour , IPointerDownHandler, IPointerUpHandler, 
         //di chuyen nen can dieu khien theo ti le khoang cach cua can dieu khien
         float fSqr = (m_rtBack.position - m_rtJoystick.position).sqrMagnitude / (m_Radius * m_Radius);
         
-        //chuan hoa vi tri cam hung
+        //chuan hoa vi tri cam ung
         Vector2 vecNormal = vec.normalized;
 
         m_VecMove = new Vector3(vecNormal.x * m_Speed * Time.deltaTime * fSqr, 0f, vecNormal.y * m_Speed * Time.deltaTime * fSqr);
