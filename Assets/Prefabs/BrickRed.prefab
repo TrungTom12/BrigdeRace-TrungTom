@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 653811280818490348}
   - component: {fileID: 3441832483348411786}
   - component: {fileID: 7855231879685688993}
+  - component: {fileID: -3079624308208575518}
   m_Layer: 0
   m_Name: BrickRed
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2556710514996621092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.858, y: 17.12, z: 18.03}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,3 +98,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3079624308208575518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556710514996621092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557866be960d27542b785c1c6a86ab90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blueMesh: {fileID: 0}
+  greenMesh: {fileID: 0}
+  redMesh: {fileID: 0}
+  pinkMesh: {fileID: 0}
+  type: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2950573337090970091}
   - component: {fileID: 298738369105193735}
   - component: {fileID: 9210940673181665061}
+  - component: {fileID: -6593222686570896517}
   m_Layer: 0
   m_Name: BrickBlue
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6419975810993108482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -19.97, y: 17.12, z: 18.03}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,3 +98,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6593222686570896517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419975810993108482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557866be960d27542b785c1c6a86ab90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blueMesh: {fileID: 2100000, guid: 25e0e7733ab29094d92f65c5a4fa615c, type: 2}
+  greenMesh: {fileID: 2100000, guid: 071ba71896b03164596040c0fda3f5e1, type: 2}
+  redMesh: {fileID: 2100000, guid: 6a41ba23f7e9acb4aadbc9bebf9b1aab, type: 2}
+  pinkMesh: {fileID: 2100000, guid: 6b23bffa3f5a14a4099c5d142d7d750e, type: 2}
+  type: 0

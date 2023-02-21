@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class JoyStick : MonoBehaviour , IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class JoyStick : MonoBehaviour , IPointerDownHandler, IPointerUpHandler,  IDragHandler
 {
     RectTransform m_rtBack;
     RectTransform m_rtJoystick;
 
     Transform Cube;
     float m_Radius;
-    float m_Speed = 5.0f;
+    [SerializeField] float m_Speed = 5.0f;
 
     Vector3 m_VecMove;
     bool m_bTouch = false;
@@ -20,7 +20,7 @@ public class JoyStick : MonoBehaviour , IPointerDownHandler, IPointerUpHandler, 
         m_rtBack = transform.Find ("Joystick_BG").GetComponent<RectTransform>();
         m_rtJoystick = transform.Find ("Joystick_BG/Handle").GetComponent<RectTransform>();
 
-        Cube = GameObject.Find("Cube").transform;
+        Cube = GameObject.Find("Player").transform;
 
         m_Radius = m_rtBack.rect.width * 0.5f; 
     }
@@ -35,11 +35,13 @@ public class JoyStick : MonoBehaviour , IPointerDownHandler, IPointerUpHandler, 
 
     void OnTouch(Vector2 vecTouch)
     {
+        //  Debug.Log("Touch position "+vecTouch.x +" "+vecTouch.y);
+        //Debug.Break();
         Vector2 vec = new Vector2(vecTouch.x - m_rtBack.position.x,vecTouch.y - m_rtBack.position.y);
         
         //dam bao gia tri Vec khong vuot qua Radius
         vec = Vector2.ClampMagnitude(vec, m_Radius);
-        m_rtJoystick.position = vec;
+        m_rtJoystick.localPosition = vec;
 
         //di chuyen nen can dieu khien theo ti le khoang cach cua can dieu khien
         float fSqr = (m_rtBack.position - m_rtJoystick.position).sqrMagnitude / (m_Radius * m_Radius);
@@ -54,7 +56,7 @@ public class JoyStick : MonoBehaviour , IPointerDownHandler, IPointerUpHandler, 
     public void OnDrag(PointerEventData eventData)
     {
         OnTouch(eventData.position);
-        m_bTouch= true;
+        m_bTouch = true;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -71,3 +73,15 @@ public class JoyStick : MonoBehaviour , IPointerDownHandler, IPointerUpHandler, 
     }
 
 }
+
+
+
+
+
+////set it parent to the main canvas
+//m_rtJoystick.transform.parent = GetComponent("Canvas").transform;
+////convert touch position to localposition reletive to canvas
+//Vector2 localPos;
+//RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent("Canva"), , null, out localPos);
+////set position on canvas
+//m_rtJoystick.transform.localPosition = localPos;

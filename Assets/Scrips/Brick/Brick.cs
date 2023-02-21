@@ -8,12 +8,14 @@ public class Brick : MonoBehaviour
     [SerializeField] private Material greenMesh;
     [SerializeField] private Material redMesh;
     [SerializeField] private Material pinkMesh;
+    //[SerializeField] private Material yellowMesh;
     public enum BrickType
     {
         Blue,
         Green,
         Red,
         Pink,
+        //Yellow,
         None
     }
     public BrickType type;
@@ -39,9 +41,19 @@ public class Brick : MonoBehaviour
             case BrickType.Pink:
                 GetComponent<MeshRenderer>().material = pinkMesh;
                 break;
+            //case BrickType.Yellow:
+            //    GetComponent<MeshRenderer>().material = yellowMesh;
+            //    break;
             default:
                 break;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+
 }
    

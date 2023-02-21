@@ -2,14 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManagerController : MonoBehaviour
+public class AI : MonoBehaviour
 {
-    Brick m_brick;
-
-    //RandomSpawner m_random;
-
-    JoyStick joyStick;
-
+    // Start is called before the first frame update
     void Start()
     {
         
